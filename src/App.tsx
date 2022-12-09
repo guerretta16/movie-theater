@@ -12,13 +12,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
       <Routes>
       {/* Login */}
       <Route path="/" element={<Login />}/>
       {/* Home */}
       <Route path="/home" element={
         <Protected>
+          <Header/>
           <Home/>
         </Protected>
       }/>

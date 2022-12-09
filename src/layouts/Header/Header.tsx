@@ -1,15 +1,19 @@
 import Logout from "../../assets/img/logout.png";
 import { useAuth } from "../../hooks/useAuth";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "./style.css";
 
 export const Header = () => {
   const { logOut } = useAuth();
+  const [token, setToken] = useLocalStorage("tokValue", undefined);
   return (
     <header className="header">
-      <a className="btn-logout" onClick={logOut}>
-        <img className="img-logout" src={Logout} alt="logout" />
-        <span>LOGOUT</span>
-      </a>
+      {typeof token !== "undefined" && (
+        <a className="btn-logout" onClick={logOut}>
+          <img className="img-logout" src={Logout} alt="logout" />
+          <span>LOGOUT</span>
+        </a>
+      )}
     </header>
   );
 };

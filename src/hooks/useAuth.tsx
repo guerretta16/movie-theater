@@ -32,7 +32,7 @@ function useAuth () {
     .catch(err => {
       setLoading(false)
       setError(true)
-      setMessageError("Email or password was not correct")
+      setMessageError(err.response.data.error)
     })
   }
 
