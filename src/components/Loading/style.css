@@ -1,0 +1,16 @@
+.loading{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-spinner{
+    width: 5%;
+}
+
+@media screen and (max-width:756px) {
+    .loading-spinner{
+        width: 15%;
+    }
+}

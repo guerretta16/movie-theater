@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: #141414;
+    padding: 10px;
+    min-height: 8vh;
+}
+
+.btn-logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-logout:hover > span{
+    border-bottom: 2px solid #fffdfd;
+}
+
+.btn-logout span{
+    font-weight: 600;
+    font-size: 13px;
+    color: #fff;
+    padding: 5px 0;
+    border-bottom: 2px solid #141414;
+    transition: .3s;
+}
+
+.img-logout{
+    width: 25px;
+}
+
+
+
+
+
+
