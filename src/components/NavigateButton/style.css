@@ -1,0 +1,23 @@
+.navigateButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.navigateButton img{
+    width: 10%;
+}
+
+.navigateButton span{
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 2px solid #424242;
+    transition: .3s;
+}
+
+.navigateButton:hover > span {
+    border-bottom: 2px solid #fff;
+}

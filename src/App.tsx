@@ -7,6 +7,7 @@ import { Protected } from "./components/Protected/Protected";
 import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
 import { Header } from "./layouts/Header/Header";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
 
@@ -22,6 +23,12 @@ function App() {
           <Home/>
         </Protected>
       }/>
+
+      {/* Not Found Page */}
+      <Route path="*" element={<>
+        <Header />
+        <NotFoundPage />
+      </>} />
 
       </Routes>
     </div>
