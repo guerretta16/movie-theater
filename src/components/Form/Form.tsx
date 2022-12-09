@@ -22,6 +22,7 @@ export const Form = ({login, messageError}:LoginProps) => {
   const handleSubmit = (e:React.FormEvent<HTMLElement>) => {
     e.preventDefault()
     login({email: formValue.email, password: formValue.password});
+    setFormValue({email:"", password:""})
   }
   
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -40,10 +41,10 @@ export const Form = ({login, messageError}:LoginProps) => {
            {messageError != ""?<span className='form-error'>{messageError}</span>:""} 
         </div>
         <div className='form-group'>
-            <input onChange={handleChange} className='form-input' type="email" name="email" placeholder="Email" required/>
+            <input onChange={handleChange} className='form-input' type="email" name="email" value={formValue.email} placeholder="Email" required/>
         </div>
         <div className='form-group'>
-            <input onChange={handleChange} className='form-input' type="password" name="password" placeholder="Password" required/>
+            <input onChange={handleChange} className='form-input' type="password" name="password" value={formValue.password} placeholder="Password" required/>
         </div>
         <div className='form-group'>
             <input className='form-btn' type="submit" value="Login"/>

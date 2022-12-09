@@ -1,5 +1,8 @@
 import { useState } from "react"
-import { popularMovieService } from '../services/MovieService'
+import { 
+    popularMovieService,
+    moviesByQueryService
+ } from '../services/MovieService'
 import { MovieInfo, Movie } from "../interfaces/types"
 
 interface MovieState {
@@ -39,11 +42,28 @@ export const useMovie = () => {
         })
     }
 
+    const moviesByQuery = (query:string) =>{
+        setLoading(true)
+        setError(false)
+        moviesByQueryService(query)
+        .then(res => {
+            setMovies(res)
+            setLoading(false)
+        })
+        .catch(err => {
+            setError(true)
+            setLoading(false)
+            setMessageError("Error")
+            console.log(err.response)
+        })
+    }
+
     return {
         movies,
         loading,
         error,
         messageError,
-        popularMovies
+        popularMovies,
+        moviesByQuery
     }
 }

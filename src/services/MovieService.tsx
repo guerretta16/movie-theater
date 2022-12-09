@@ -8,6 +8,14 @@ const popularMovieService = async () => {
     )
 }
 
+const moviesByQueryService = async (query:string) => {
+    return(
+        await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKeyMain}&query=${query}`)
+        .then(response => response.data)
+    )
+}
+
 export {
-    popularMovieService
+    popularMovieService,
+    moviesByQueryService
 }
