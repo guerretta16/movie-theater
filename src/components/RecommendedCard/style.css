@@ -1,0 +1,69 @@
+.recommended-card{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+    flex: 0 0 auto;
+    color: #141414;
+    border-radius: 5px;
+    background-color: #c7c7c7;
+    transition: .3s;
+}
+
+.recommended-card:hover{
+    background-color: #878787;
+}
+
+.recommended-picture{
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.recommended-picture img{
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.recommended-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.recommended-info-bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.recommended-info-title{
+    font-size: 13px;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media screen and (max-width:940px){
+    .recommended-card{
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width:756px){
+    .recommended-card{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:560px){
+    .recommended-card{
+        width: 90%;
+    }
+}
