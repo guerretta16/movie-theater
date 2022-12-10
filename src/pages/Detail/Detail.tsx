@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ActorCard } from "../../components/ActorCard/ActorCard";
 import { Loading } from "../../components/Loading/Loading";
@@ -12,6 +12,7 @@ import "./style.css";
 
 export const Detail = () => {
   const [favorites, setFavorites] = useLocalStorage("favMovies", []);
+  const [added, setAdded] = useState<boolean>(false);
   const { idMovie } = useParams();
   const {
     movie,
@@ -28,6 +29,15 @@ export const Detail = () => {
     movieDetail(String(idMovie));
     movieCredits(String(idMovie));
     movieRecommended(String(idMovie));
+
+    const exist = favorites.filter(
+      (item: MovieDetail) => String(item.id) === idMovie
+    );
+    if (exist.length > 0) {
+      setAdded(true);
+    } else {
+      setAdded(false);
+    }
   }, []);
 
   if (loading) {
@@ -42,20 +52,22 @@ export const Detail = () => {
     }
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClickAdd = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const arrayMovies = favorites;
-    const exist = arrayMovies.filter(
-      (item: MovieDetail) => item.id === movie.id
-    );
-    if (exist.length === 0) {
-      arrayMovies.push(movie);
-      setFavorites(arrayMovies);
-    } else {
-      alert("You'd added it already");
-    }
+    arrayMovies.push(movie);
+    setFavorites(arrayMovies);
+    setAdded(true)
   };
-  console.log(recommended);
+
+  const handleClickRemove = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    const arrayMovies = favorites;
+    const removeMovie = arrayMovies.filter((item:MovieDetail) => String(item.id) !== idMovie);
+    setFavorites(removeMovie);
+    setAdded(false)
+  };
+
   return movie.id !== 0 ? (
     <div className="details">
       <div className="details-header">
@@ -89,9 +101,15 @@ export const Detail = () => {
             <div className="main-info">
               <div className="main-info-head">
                 <h2 className="details-title">{movie.title}</h2>
-                <button onClick={handleClick} className="details-btn-fav">
-                  Add Favorite
-                </button>
+                {!added ? (
+                  <button onClick={handleClickAdd} className="details-btn-fav">
+                    Add Favorite
+                  </button>
+                ) : (
+                  <button onClick={handleClickRemove} className="details-btn-fav">
+                    Remove Favorite
+                  </button>
+                )}
               </div>
               <small className="details-tagLine">{movie.tagline}</small>
               <p className="details-overview">{movie.overview}</p>
