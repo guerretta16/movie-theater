@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React from "react";
 import {
   Routes,
   Route
@@ -8,6 +8,8 @@ import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
 import { Header } from "./layouts/Header/Header";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { Detail } from "./pages/Detail/Detail";
+import { Favorite } from "./pages/Favorite/Favorite";
 
 function App() {
 
@@ -22,10 +24,29 @@ function App() {
           <Header/>
           <Home/>
         </Protected>
+      } />
+      {/* Detail Page */}
+      <Route path="/movie/:idMovie" element={
+        <Protected>
+          <Header/>
+          <Detail/>
+        </Protected>
       }/>
+      {/* Favorite */}
+      <Route path="/favorite" element={
+        <Protected>
+          <Header/>
+          <Favorite/>
+        </Protected>
+      } />
 
       {/* Not Found Page */}
       <Route path="*" element={<>
+        <Header />
+        <NotFoundPage />
+      </>} />
+
+      <Route path="/home/*" element={<>
         <Header />
         <NotFoundPage />
       </>} />

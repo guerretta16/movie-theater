@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Movie } from "../../interfaces/types";
 import "./style.css";
 
@@ -10,7 +11,7 @@ export const MovieCard = ({ movie }: MovieProp) => {
   const date = new Date(movie.release_date);
 
   return (
-    <div className="movieCard">
+    <Link to={`/movie/${movie.id}`} className="movieCard">
       <div className="movieCard-header">
         <img
           className="movieCard-poster"
@@ -33,6 +34,6 @@ export const MovieCard = ({ movie }: MovieProp) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

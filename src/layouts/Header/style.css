@@ -1,9 +1,10 @@
 .header{
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     background-color: #141414;
-    padding: 10px;
+    padding: 10px 20px;
     min-height: 8vh;
 }
 
@@ -36,8 +37,25 @@
     width: 25px;
 }
 
+.favMovBtn{
+    color: #141414;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: .3s;
+    margin: 0px 5px;
+}
 
+.favMovBtn:hover{
+    background-color: rgb(153, 153, 153);
+}
 
+@media screen and (max-width: 420px) {
+    .favMovBtn{
+        font-size: 12px;
+    }
+}
 
 
 

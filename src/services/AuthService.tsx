@@ -1,9 +1,9 @@
 import axios from "axios"
 import { User } from "../interfaces/types"
 
-function loginService (userInfo:User){
+const loginService = async (userInfo:User) => {
     return(
-        axios.post('https://reqres.in/api/login', userInfo)
+        await axios.post('https://reqres.in/api/login', userInfo)
     )
 }
 

@@ -15,7 +15,32 @@ const moviesByQueryService = async (query:string) => {
     )
 }
 
+const movieDetailService = async (id:string) => {
+    return(
+        await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKeyMain}`)
+        .then(response => response.data)
+    )
+}
+
+const movieCreditsService = async (id:string) => {
+    return(
+        await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKeyMain}`)
+        .then(response => response.data)
+    )
+}
+
+const movieRecommendedService = async (id:string) => {
+    return(
+        await axios.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKeyMain}`)
+        .then(response => response.data)
+    )
+}
+
+
 export {
     popularMovieService,
-    moviesByQueryService
+    moviesByQueryService,
+    movieDetailService,
+    movieCreditsService,
+    movieRecommendedService
 }

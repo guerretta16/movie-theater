@@ -10,9 +10,9 @@ export const MovieList = ({movies}:MovieProp) => {
   return (
     <div className='movieList'>
         {
-             movies && movies.results.map((movie, index) => (
+             movies.results.length > 0 ? movies.results.map((movie, index) => (
                 <MovieCard key={index} movie={movie}/>
-            ))
+            )):<div className='empty'>Empty List</div>
         }
     </div>
   )

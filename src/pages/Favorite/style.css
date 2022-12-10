@@ -1,0 +1,26 @@
+.favorite{
+    padding: 10px;
+}
+
+.favorite-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.favorite-btn{
+    background-color: #141414;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.favorite-btn:hover{
+    background-color: #fff;
+    color: #141414;
+}

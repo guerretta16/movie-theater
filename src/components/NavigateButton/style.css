@@ -1,13 +1,12 @@
 .navigateButton{
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
     cursor: pointer;
 }
 
 .navigateButton img{
-    width: 10%;
+    width: 30px;
 }
 
 .navigateButton span{
@@ -20,4 +19,18 @@
 
 .navigateButton:hover > span {
     border-bottom: 2px solid #fff;
+}
+
+@media screen and (max-width: 1000px){
+    .navigateButton{
+        justify-content: center;
+    }
+
+    .navigateButton img{
+        width: 60px;
+    }
+    
+    .navigateButton span{
+        font-size: 20px;
+    }
 }
