@@ -1,11 +1,16 @@
-# Getting Started with Create React App
+This is the Movie Theater Web Site!!!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Additional libraries used:
+- Lottie: lottie-react
+- Axios: axios
+- Routing: react-router-dom
 
-## Available Scripts
+The style is 100% css, without bootstrap or tailwind.
 
-In the project directory, you can run:
+Link: https://github.com/guerretta16/movie-theater.git
+Web deploy: https://movie-theater-ashy.vercel.app/
 
+<<<<<<< HEAD
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -46,3 +51,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 UPS...
+
+User info:
+email: eve.holt@reqres.in
+password: cityslicka 
+
